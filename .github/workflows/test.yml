@@ -22,7 +22,7 @@ jobs:
         run: npm install -g less
 
       - name: Compile LESS to CSS
-        run: lessc styles/less/styles.less styles/css/styles.css
+        run: lessc mesa-os/styles.less mesa-os/styles.css
 
       - name: Commit and push if changed
         run: |
