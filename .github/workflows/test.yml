@@ -21,8 +21,13 @@ jobs:
       - name: Install LESS
         run: npm install -g less
 
+      - name: List files in the root
+        run: ls -la
+        working-directory: ${{ github.workspace }}
+
       - name: Compile LESS to CSS
         run: lessc styles.less styles.css
+        working-directory: ${{ github.workspace }}
 
       - name: Commit and push if changed
         run: |
@@ -30,4 +35,3 @@ jobs:
           git config --global user.name "GitHub Action"
           git add styles.css
           git diff --staged --quiet || (git commit -m "Compile LESS to CSS" && git push)
-
