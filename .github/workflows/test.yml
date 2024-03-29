@@ -22,12 +22,12 @@ jobs:
         run: npm install -g less
 
       - name: Compile LESS to CSS
-        run: lessc mesa-os/styles.less mesa-os/styles.css
+        run: lessc styles.less styles.css
 
       - name: Commit and push if changed
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
-          git add -A
+          git add styles.css  # Adjusted to add only the styles.css file
           git commit -m "Compile LESS to CSS" --allow-empty
           git push
