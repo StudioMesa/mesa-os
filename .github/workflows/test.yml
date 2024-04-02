@@ -34,7 +34,7 @@ jobs:
           git add styles.css
           git diff --staged --quiet || git commit -m "Compile LESS to CSS"
           if [ $? -eq 0 ]; then
-            git push https://github.com/StudioMesa/parable.git HEAD:main
+            git push https://github.com/StudioMesa/mesa-os.git HEAD:main
           else
             echo "No changes to commit."
           fi
